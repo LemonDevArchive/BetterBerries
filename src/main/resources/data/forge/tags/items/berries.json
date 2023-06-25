@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:berries/blackberries",
+    "#forge:berries/blueberries",
+    "#forge:berries/glow_berries",
+    "#forge:berries/maloberries",
+    "#forge:berries/sweet_berries",
+    "#forge:berries/raspberries"
+  ]
+}

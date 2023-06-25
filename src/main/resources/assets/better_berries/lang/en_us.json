@@ -1,0 +1,13 @@
+{
+  "item.better_berries.blackberries": "Blackberries",
+  "item.better_berries.blueberries": "Blueberries",
+  "item.better_berries.maloberries": "Maloberries",
+  "item.better_berries.raspberries": "Raspberries",
+
+  "item.better_berries.berry_medley": "Berry Medley",
+
+  "tooltip.better_berries.saturating": "Saturating!",
+  "tooltip.better_berries.irresistible_combination": "An Irresistible Combination Of Berries!",
+
+  "itemGroup.better_berries": "Better Berries"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:berry_biomes",
+  "features": "better_berries:blueberry_bush_placed",
+  "step": "vegetal_decoration"
+}
