@@ -26,6 +26,20 @@ public class ModCreativeTab {
             event.accept(ModItems.MALOBERRIES.get());
             event.accept(ModItems.RASPBERRIES.get());
 
+            event.accept(ModItems.BLACKBERRY_JUICE.get());
+            event.accept(ModItems.BLUEBERRY_JUICE.get());
+            event.accept(ModItems.GLOW_BERRY_JUICE.get());
+            event.accept(ModItems.MALOBERRY_JUICE.get());
+            event.accept(ModItems.RASPBERRY_JUICE.get());
+            event.accept(ModItems.SWEET_BERRY_JUICE.get());
+
+            event.accept(ModItems.BLACKBERRY_SMOOTHIE.get());
+            event.accept(ModItems.BLUEBERRY_SMOOTHIE.get());
+            event.accept(ModItems.GLOW_BERRY_SMOOTHIE.get());
+            event.accept(ModItems.MALOBERRY_SMOOTHIE.get());
+            event.accept(ModItems.RASPBERRY_SMOOTHIE.get());
+            event.accept(ModItems.SWEET_BERRY_SMOOTHIE.get());
+
             event.accept(ModItems.BERRY_MEDLEY.get());
         }
     }
