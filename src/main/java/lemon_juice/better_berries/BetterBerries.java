@@ -3,6 +3,7 @@ package lemon_juice.better_berries;
 import lemon_juice.better_berries.block.ModBlocks;
 import lemon_juice.better_berries.creativetab.ModCreativeTab;
 import lemon_juice.better_berries.item.ModItems;
+import lemon_juice.better_berries.util.ModCompostables;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -33,7 +34,12 @@ public class BetterBerries {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {}
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            //Register Compostables
+            ModCompostables.setup(event);
+        });
+    }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {}
