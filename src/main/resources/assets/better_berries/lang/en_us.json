@@ -20,6 +20,11 @@
   "item.better_berries.raspberry_smoothie": "Raspberry Smoothie",
   "item.better_berries.sweet_berry_smoothie": "Sweet Berry Smoothie",
 
+  "block.better_berries.blackberry_bush": "Blackberry Bush",
+  "block.better_berries.blueberry_bush": "Blueberry Bush",
+  "block.better_berries.maloberry_bush": "Maloberry Bush",
+  "block.better_berries.raspberry_bush": "Raspberry Bush",
+
   "tooltip.better_berries.saturating": "Saturating!",
   "tooltip.better_berries.irresistible_combination": "An Irresistible Combination Of Berries!",
 
