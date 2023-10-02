@@ -15,6 +15,11 @@ public class BerryMedleyItem extends BowlFoodItem {
     }
 
     @Override
+    public int getMaxStackSize(ItemStack stack) {
+        return 1;
+    }
+
+    @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag tooltipFlag) {
         components.add(Component.translatable("tooltip.better_berries.irresistible_combination"));
     }
