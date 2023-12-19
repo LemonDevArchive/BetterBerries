@@ -47,11 +47,11 @@ public class AbstractBerryBushBlock extends BushBlock implements BonemealableBlo
 
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         int i = blockState.getValue(AGE);
-        if (i < 3 && serverLevel.getRawBrightness(blockPos.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(serverLevel, blockPos, blockState, randomSource.nextInt(5) == 0)) {
+        if (i < 3 && serverLevel.getRawBrightness(blockPos.above(), 0) >= 9 && net.neoforged.neoforge.common.CommonHooks.onCropsGrowPre(serverLevel, blockPos, blockState, randomSource.nextInt(5) == 0)){
             BlockState blockstate = blockState.setValue(AGE, Integer.valueOf(i + 1));
             serverLevel.setBlock(blockPos, blockstate, 2);
             serverLevel.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(blockstate));
-            net.minecraftforge.common.ForgeHooks.onCropsGrowPost(serverLevel, blockPos, blockState);
+            net.neoforged.neoforge.common.CommonHooks.onCropsGrowPost(serverLevel, blockPos, blockState);
         }
 
     }
@@ -74,7 +74,7 @@ public class AbstractBerryBushBlock extends BushBlock implements BonemealableBlo
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
         return blockState.getValue(AGE) < 3;
     }
 

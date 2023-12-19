@@ -1,43 +1,40 @@
 package lemon_juice.better_berries;
 
-import lemon_juice.better_berries.block.ModBlocks;
-import lemon_juice.better_berries.creativetab.ModCreativeTab;
-import lemon_juice.better_berries.item.ModItems;
-import lemon_juice.better_berries.util.ModCompostables;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import lemon_juice.better_berries.block.BetterBerriesBlocks;
+import lemon_juice.better_berries.creativetab.BetterBerriesCreativeTab;
+import lemon_juice.better_berries.item.BetterBerriesItems;
+import lemon_juice.better_berries.util.BetterBerriesCompostables;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(BetterBerries.MOD_ID)
 public class BetterBerries {
     public static final String MOD_ID = "better_berries";
 
-    public BetterBerries() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        // Register Items & Blocks
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
-
-        // Register Creative Tab
-        ModCreativeTab.register(modEventBus);
-        modEventBus.addListener(ModCreativeTab::registerTabs);
-
+    public BetterBerries(IEventBus modEventBus) {
         modEventBus.addListener(this::commonSetup);
 
-        MinecraftForge.EVENT_BUS.register(this);
+        // Register Items & Blocks
+        BetterBerriesItems.register(modEventBus);
+        BetterBerriesBlocks.register(modEventBus);
+
+        // Register Creative Tab
+        BetterBerriesCreativeTab.register(modEventBus);
+        modEventBus.addListener(BetterBerriesCreativeTab::registerTabs);
+
+        NeoForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             //Register Compostables
-            ModCompostables.setup(event);
+            BetterBerriesCompostables.setup(event);
         });
     }
 
